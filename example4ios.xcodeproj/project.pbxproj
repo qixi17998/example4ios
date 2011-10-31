@@ -39,23 +39,23 @@
 		7C2290AE145ED868004F8213 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		7C2290B0145ED869004F8213 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		7C2290B2145ED869004F8213 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		7C2290B6145ED869004F8213 /* example4ios-Info.plist */ = {isa = PBXFileReference; path = "example4ios-Info.plist"; sourceTree = "<group>"; };
+		7C2290B6145ED869004F8213 /* example4ios-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "example4ios-Info.plist"; sourceTree = "<group>"; };
 		7C2290B8145ED869004F8213 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		7C2290BA145ED869004F8213 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		7C2290BC145ED869004F8213 /* example4ios-Prefix.pch */ = {isa = PBXFileReference; path = "example4ios-Prefix.pch"; sourceTree = "<group>"; };
-		7C2290BD145ED869004F8213 /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		7C2290BC145ED869004F8213 /* example4ios-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "example4ios-Prefix.pch"; sourceTree = "<group>"; };
+		7C2290BD145ED869004F8213 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		7C2290BE145ED869004F8213 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		7C2290C1145ED869004F8213 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		7C2290C4145ED869004F8213 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
-		7C2290C6145ED869004F8213 /* MasterViewController.h */ = {isa = PBXFileReference; path = MasterViewController.h; sourceTree = "<group>"; };
+		7C2290C6145ED869004F8213 /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
 		7C2290C7145ED869004F8213 /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
-		7C2290C9145ED869004F8213 /* DetailViewController.h */ = {isa = PBXFileReference; path = DetailViewController.h; sourceTree = "<group>"; };
+		7C2290C9145ED869004F8213 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		7C2290CA145ED869004F8213 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		7C2290D1145ED869004F8213 /* example4iosTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = example4iosTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C2290D2145ED869004F8213 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		7C2290DA145ED869004F8213 /* example4iosTests-Info.plist */ = {isa = PBXFileReference; path = "example4iosTests-Info.plist"; sourceTree = "<group>"; };
+		7C2290DA145ED869004F8213 /* example4iosTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "example4iosTests-Info.plist"; sourceTree = "<group>"; };
 		7C2290DC145ED869004F8213 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		7C2290DE145ED869004F8213 /* example4iosTests.h */ = {isa = PBXFileReference; path = example4iosTests.h; sourceTree = "<group>"; };
+		7C2290DE145ED869004F8213 /* example4iosTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = example4iosTests.h; sourceTree = "<group>"; };
 		7C2290DF145ED869004F8213 /* example4iosTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = example4iosTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
