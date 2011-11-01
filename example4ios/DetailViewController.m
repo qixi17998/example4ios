@@ -16,16 +16,10 @@
 @implementation DetailViewController
 
 @synthesize detailItem = _detailItem;
+@synthesize slider = _slider;
+@synthesize label = _label;
 @synthesize detailDescriptionLabel = _detailDescriptionLabel;
 @synthesize masterPopoverController = _masterPopoverController;
-
-@synthesize slider;
-@synthesize label;
-
-- (IBAction)sliderChange:(id)sender {
-    int slierValue = slider.value;
-    label.text = [NSString stringWithFormat:@"%d", slierValue];
-}
 
 #pragma mark - Managing the detail item
 
@@ -69,6 +63,8 @@
 
 - (void)viewDidUnload
 {
+    [self setSlider:nil];
+    [self setLabel:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -120,4 +116,5 @@
     self.masterPopoverController = nil;
 }
 
+- (IBAction)sliderChanged:(id)sender {     NSString *sliderValue = [NSString stringWithFormat:@"%d", _slider.value];     _label.text = sliderValue; }
 @end

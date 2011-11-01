@@ -9,18 +9,15 @@
 #import <UIKit/UIKit.h>
 
 @interface DetailViewController : UIViewController <UISplitViewControllerDelegate> {
-    UISlider *slider;
-    UILabel *label;
 }
 
 @property (strong, nonatomic) id detailItem;
 
 @property (strong, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
 
-@property (retain, nonatomic) IBOutlet UISlider *slider;
+@property (weak, nonatomic) IBOutlet UISlider *slider;
+@property (weak, nonatomic) IBOutlet UILabel *label;
 
-@property (retain,nonatomic) IBOutlet UILabel *label;
-
-- (IBAction)sliderChange:(id)sender;
+- (IBAction)sliderChanged:(id)sender;
 
 @end
