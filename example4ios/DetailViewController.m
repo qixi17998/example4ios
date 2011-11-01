@@ -19,6 +19,14 @@
 @synthesize detailDescriptionLabel = _detailDescriptionLabel;
 @synthesize masterPopoverController = _masterPopoverController;
 
+@synthesize slider;
+@synthesize label;
+
+- (IBAction)sliderChange:(id)sender {
+    int slierValue = slider.value;
+    label.text = [NSString stringWithFormat:@"%d", slierValue];
+}
+
 #pragma mark - Managing the detail item
 
 - (void)setDetailItem:(id)newDetailItem
