@@ -116,5 +116,8 @@
     self.masterPopoverController = nil;
 }
 
-- (IBAction)sliderChanged:(id)sender {     NSString *sliderValue = [NSString stringWithFormat:@"%d", _slider.value];     _label.text = sliderValue; }
+- (IBAction)sliderChanged:(id)sender {     
+    NSString *sliderValue =[NSString stringWithFormat:@"%d", (int)_slider.value];     
+    _label.text =  sliderValue; 
+}
 @end
