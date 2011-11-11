@@ -7,10 +7,13 @@
 //
 
 #import "AppDelegate.h"
+#import "Building.h"
+#import <sqlite3.h>
 
 @implementation AppDelegate
 
 @synthesize window = _window;
+@synthesize databaseName, databasePath, items;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -20,6 +23,14 @@
         UINavigationController *navigationController = [splitViewController.viewControllers lastObject];
         splitViewController.delegate = (id)navigationController.topViewController;
     }
+    
+    databaseName = @"building.sqlite";
+    NSArray *documentPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentDir = [documentPaths objectAtIndex:0];
+    databasePath = [documentDir stringByAppendingPathComponent:databaseName];
+    [self checkAndCreateDatabase];
+    [self readBuildingsFromDatabase];
+    
     return YES;
 }
 							
@@ -60,6 +71,74 @@
      Save data if appropriate.
      See also applicationDidEnterBackground:.
      */
+}
+
+- (void) checkAndCreateDatabase{
+    BOOL success;
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    success = [fileManager fileExistsAtPath:databasePath];
+    if (success) return;
+    NSString *databasePathFromApp = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:databaseName];
+    [fileManager copyItemAtPath:databasePathFromApp toPath:databasePath error:nil];
+}
+
+- (void) readBuildingsFromDatabase{
+    sqlite3 *database;
+    items = [[NSMutableArray alloc]init];
+    if (sqlite3_open([databasePath UTF8String], &database)==SQLITE_OK) {
+        const char *sqlStatement = "select * from buildings";
+        sqlite3_stmt *compiledStatement;
+        if (sqlite3_prepare_v2(database, sqlStatement, -1, &compiledStatement, NULL)==SQLITE_OK) {
+            while (sqlite3_step(compiledStatement)==SQLITE_OK) {
+                NSMutableString *bUniqueID = [NSString stringWithUTF8String:(char *)sqlite3_column_text(compiledStatement, 0)];
+                NSMutableString *bName = [NSString stringWithUTF8String:(char *)sqlite3_column_text(compiledStatement, 1)];
+                NSMutableString *bAddress = [NSString stringWithUTF8String:(char *)sqlite3_column_text(compiledStatement, 2)];
+                
+                // Latitude Field
+                NSMutableString *bLatitude = [NSString stringWithUTF8String:(char *)sqlite3_column_text(compiledStatement, 3)];
+                
+                // Longitude Field
+                NSMutableString *bLongitude = [NSString stringWithUTF8String:(char *)sqlite3_column_text(compiledStatement, 4)];
+                
+                // Type Field
+				NSMutableString *bType = [NSString stringWithUTF8String:(char *)sqlite3_column_text(compiledStatement, 5)];
+                
+                // This is to remove the double quotes at the beginning and end of line
+                NSString *UniqueID = [bUniqueID substringWithRange:NSMakeRange(1, bUniqueID.length -2)];
+                NSString *name =  [bName substringWithRange:NSMakeRange(1, bName.length -2)];
+                NSString *address = [bAddress substringWithRange:NSMakeRange(1, bAddress.length -2)];
+                NSString *latitude =  [bLatitude substringWithRange:NSMakeRange(1, bLatitude.length -2)];
+                NSString *longitude =  [bLongitude substringWithRange:NSMakeRange(1, bLongitude.length -2)];
+                NSString *type =  [bType substringWithRange:NSMakeRange(1, bType.length -2)];
+                
+                
+                // Important To Print Out Values To Ensure Correctness
+                // Debugging Step 1 
+                
+                // My Error 1
+                // %g is for type double
+                NSLog(@"Name: %@ Latitude: %g Longitude: %g", name, latitude, longitude);
+                
+                // Corect Output
+                // I converted to double since CLLocationCoordinates2D are of type double
+                NSLog(@"Name: %@ Latitude: %g Longitude: %g", name, [latitude doubleValue], [longitude doubleValue]);
+                
+                
+                
+                // Create new building object and then add it to the items array. 
+                [items addObject:[Building buildingWithID:UniqueID name:name address:address latitude:latitude type:type]];
+            }
+        }
+        sqlite3_finalize(compiledStatement);
+    }
+    for (Building *theBuilding in items) {
+        NSLog(@"Name: %@ Latitude: %g Longitude: %g", theBuilding.name, [theBuilding.latitude doubleValue], [theBuilding.longitude doubleValue]);
+    }
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
+    NSArray *sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
+    NSArray *sortedArray = [items sortedArrayUsingDescriptors:sortDescriptors];
+    self.items = [sortedArray mutableCopy];
+    sqlite3_close(database);
 }
 
 @end

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7C0FEBD9146BD5C7001FBF88 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C0FEBD8146BD5C6001FBF88 /* libsqlite3.dylib */; };
+		7C0FEBDC146BD66F001FBF88 /* Building.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C0FEBDB146BD66F001FBF88 /* Building.m */; };
 		7C2290AF145ED869004F8213 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C2290AE145ED868004F8213 /* UIKit.framework */; };
 		7C2290B1145ED869004F8213 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C2290B0145ED869004F8213 /* Foundation.framework */; };
 		7C2290B3145ED869004F8213 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C2290B2145ED869004F8213 /* CoreGraphics.framework */; };
@@ -35,6 +37,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7C0FEBD8146BD5C6001FBF88 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		7C0FEBDA146BD66F001FBF88 /* Building.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Building.h; sourceTree = "<group>"; };
+		7C0FEBDB146BD66F001FBF88 /* Building.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Building.m; sourceTree = "<group>"; };
 		7C2290AA145ED868004F8213 /* example4ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = example4ios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C2290AE145ED868004F8213 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		7C2290B0145ED869004F8213 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -64,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C0FEBD9146BD5C7001FBF88 /* libsqlite3.dylib in Frameworks */,
 				7C2290AF145ED869004F8213 /* UIKit.framework in Frameworks */,
 				7C2290B1145ED869004F8213 /* Foundation.framework in Frameworks */,
 				7C2290B3145ED869004F8213 /* CoreGraphics.framework in Frameworks */,
@@ -105,6 +111,7 @@
 		7C2290AD145ED868004F8213 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7C0FEBD8146BD5C6001FBF88 /* libsqlite3.dylib */,
 				7C2290AE145ED868004F8213 /* UIKit.framework */,
 				7C2290B0145ED869004F8213 /* Foundation.framework */,
 				7C2290B2145ED869004F8213 /* CoreGraphics.framework */,
@@ -118,12 +125,14 @@
 			children = (
 				7C2290BD145ED869004F8213 /* AppDelegate.h */,
 				7C2290BE145ED869004F8213 /* AppDelegate.m */,
+				7C0FEBDA146BD66F001FBF88 /* Building.h */,
+				7C0FEBDB146BD66F001FBF88 /* Building.m */,
+				7C2290C9145ED869004F8213 /* DetailViewController.h */,
+				7C2290CA145ED869004F8213 /* DetailViewController.m */,
 				7C2290C0145ED869004F8213 /* MainStoryboard_iPhone.storyboard */,
 				7C2290C3145ED869004F8213 /* MainStoryboard_iPad.storyboard */,
 				7C2290C6145ED869004F8213 /* MasterViewController.h */,
 				7C2290C7145ED869004F8213 /* MasterViewController.m */,
-				7C2290C9145ED869004F8213 /* DetailViewController.h */,
-				7C2290CA145ED869004F8213 /* DetailViewController.m */,
 				7C2290B5145ED869004F8213 /* Supporting Files */,
 			);
 			path = example4ios;
@@ -270,6 +279,7 @@
 				7C2290BF145ED869004F8213 /* AppDelegate.m in Sources */,
 				7C2290C8145ED869004F8213 /* MasterViewController.m in Sources */,
 				7C2290CB145ED869004F8213 /* DetailViewController.m in Sources */,
+				7C0FEBDC146BD66F001FBF88 /* Building.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -449,6 +459,7 @@
 				7C2290E5145ED869004F8213 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7C2290E6145ED869004F8213 /* Build configuration list for PBXNativeTarget "example4iosTests" */ = {
 			isa = XCConfigurationList;
@@ -457,6 +468,7 @@
 				7C2290E8145ED869004F8213 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -115,5 +115,20 @@
     return YES;
 }
 */
+/*- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return 5;
+}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    static NSString *CellIndentifier = @"Cell";
+    UITableViewCell *cell=(UITableViewCell *) [tableView dequeueReusableCellWithIdentifier:CellIndentifier];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIndentifier];
+    }
+    cell.textLabel.text=@"Detail";
+    return cell;
+}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+}*/
 
 @end
